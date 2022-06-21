@@ -1,0 +1,18 @@
+body{
+  background-color: aqua;
+}
+.stop-watch {
+   background-color: antiquewhite;
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+    margin-left: 10%;
+    font-size: 3em;
+    padding: 20px;
+    margin-right: 190px;
+  }
+
+  button{
+    margin-left: 90%;
+    margin-top: 1%;
+  }
+  

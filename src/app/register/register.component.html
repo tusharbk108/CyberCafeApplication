@@ -1,0 +1,103 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<section class="vh-100" >
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-9">
+  
+          <h1>Register Here</h1>
+  
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body">
+  
+              <div class="row align-items-center pt-4 pb-3">
+                <div class="col-md-3 ps-5">
+  
+                  <h5 class="mb-0">Full name</h5>
+  
+                </div>
+                <div class="col-md-9 pe-5">
+  
+                  <input type="text" #fullName  [(ngModel)]="name" (change)="getName(fullName.value)" class="form-control form-control-lg" />
+                  <div *ngIf="nameValid" class="name">
+                    <span>Name should contain more than 2 letters</span>
+                  </div>
+                  <div *ngIf="nameContainsNumber" class="name">
+                    <span>Number Not Allowed</span>
+                  </div>
+                </div>
+              </div>
+  
+              <hr class="mx-n3">
+  
+              <div class="row align-items-center py-3">
+                <div class="col-md-3 ps-5">
+  
+                  <h5 class="mb-0">Email address</h5>
+  
+                </div>
+                <div class="col-md-9 pe-5">
+  
+                  <input type="email" #Email [(ngModel)]="email" (change)="getEmail(Email.value)" class="form-control form-control-lg" placeholder="example@example.com" />
+                  <div *ngIf="emailValid" class="name">
+                    <span>Invalid Email</span>
+                  </div>
+                  <div *ngIf="emailExist" class="name">
+                    <span>Email Already Exist</span>
+                  </div>
+                </div>
+              </div>
+  
+              <hr *ngIf="emailExist1" class="mx-n3">
+
+              <div *ngIf="emailExist1" class="row align-items-center py-3">
+                <div class="col-md-3 ps-5">
+  
+                  <h5 class="mb-0">Username</h5>
+  
+                </div>
+                <div class="col-md-9 pe-5">
+  
+                  <input type="text" #userName [(ngModel)]="username" (change)="getUsername(userName.value)" class="form-control form-control-lg" placeholder="Enter Username" />
+                  <div *ngIf="shortUsername" class="name">
+                    <span>Username should contain more than 4 letter</span>
+                  </div>
+                  <div *ngIf="userNameNotavailable" class="name">
+                    <span>Username not available</span>
+                  </div>
+                </div>
+              </div>
+  
+              <hr *ngIf="userNameavailable" class="mx-n3">
+
+              <div *ngIf="userNameavailable" class="row align-items-center py-3">
+                <div class="col-md-3 ps-5">
+  
+                  <h5 class="mb-0">Password</h5>
+  
+                </div>
+                <div class="col-md-9 pe-5">
+  
+                  <input type="password" #passwordCheck [(ngModel)]="password" (change)="checkPassword(passwordCheck.value)" class="form-control form-control-lg" placeholder="Set Password" />
+                  <div *ngIf="passwordMin" class="name">
+                    <span>Minimum 8 character</span>
+                  </div>
+                 
+                </div>
+              </div>
+  
+              <hr *ngIf=""  class="mx-n3">
+  
+              <div *ngIf="validPassword" class="px-5 py-4">
+                <button type="submit" class="btn btn-primary btn-lg" (click) = "onSubmit()">Next</button>
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>

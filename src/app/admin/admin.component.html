@@ -1,0 +1,41 @@
+<br><br>
+<h1>Admin Panel</h1>
+
+<br><br>
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Username</th>
+        <th scope="col">Name</th>
+        <th scope="col">Login Time</th>
+        <th scope="col">LogoutTime</th>
+        <th scope="col">Total Used Time</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Payment Mode</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userDetails">
+        <td>{{user.username}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.loginTime}}</td>
+        <td>{{user.logoutTime}}</td>
+        <td>{{user.timeUtilized}}</td>
+        <td>{{user.amount}}.Rs</td>
+        <td> 
+          <div *ngIf="user.paymentMode!=null">{{user.paymentMode}}</div>
+
+          <div *ngIf="user.paymentMode==null">
+           <select [(ngModel)]="chosenMod" (ngModelChange)="modo(user.id)" id="selectid" class="form-control-mb-12">
+         
+          <option value="Cash">Cash</option>
+          <option value="UPI">UPI</option>
+          
+       </select>
+      </div>
+      </td>
+      </tr>
+    </tbody>
+</table>
+</div>
