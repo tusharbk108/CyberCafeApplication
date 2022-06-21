@@ -1,0 +1,11 @@
+cybercafe\Controller\LoginController.class
+cybercafe\Service\RegistrationService.class
+cybercafe\Repository\RegisterRepo.class
+cybercafe\Repository\TimeCalculationRepo.class
+cybercafe\Service\LoginService.class
+cybercafe\configurer\CostomerConfig.class
+cybercafe\Model\RegistrationModel.class
+cybercafe\Controller\RegisterController.class
+cybercafe\CybercafeApplication.class
+cybercafe\Model\TimeCalculation.class
+cybercafe\Model\UserLogoutResponse.class
